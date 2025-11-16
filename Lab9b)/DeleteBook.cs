@@ -22,6 +22,8 @@ namespace Lab9b_
         {
             if (string.IsNullOrWhiteSpace(txtDltId.Text))
             {
+                dltDGV.DataSource = null;
+                dltDGV.Refresh();
                 MessageBox.Show("Please fill the Book ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -42,6 +44,8 @@ namespace Lab9b_
                     }
                     else
                     {
+                        dltDGV.DataSource = null;
+                        dltDGV.Refresh();
                         MessageBox.Show("No book found with this ID!", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
@@ -66,6 +70,8 @@ namespace Lab9b_
             if (string.IsNullOrWhiteSpace(txtDltId.Text))
             {
                 MessageBox.Show("Please fill the Book ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dltDGV.DataSource = null;
+                dltDGV.Refresh();
                 return;
             }
             else
@@ -84,7 +90,8 @@ namespace Lab9b_
                         if (rows == 0)
                         {
                             MessageBox.Show($"Record of book with book id: "+txtDltId.Text+" not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                           
+                            dltDGV.DataSource = null;
+                            dltDGV.Refresh();
                         }
                         else
                         {

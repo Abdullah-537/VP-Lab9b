@@ -51,6 +51,17 @@ namespace Lab9b_
                     }
                     else
                     {
+                        txtaddtitle.Clear();
+                        txtaddauthor.Clear();
+                        txtaddpublisher.Clear();
+                        cbctgry.SelectedIndex = -1;
+                        txtISBDNadd.Clear();
+                        NUDquantity.Value = 0;
+                        NUDRack.Value = 0;
+                        txtPrice.Clear();
+                        DTPDate.Value = DateTime.Now;
+                        updateDGV.DataSource = null;
+                        updateDGV.Refresh();
                         MessageBox.Show("No book found with this ID!", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
